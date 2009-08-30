@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<link rel="alternate" type="application/rss+xml" title="ANIMATION FLOOR - RSS Feed" href="http://plontsch.com/experiments/animatedgallery/feed.php" />
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<title>ANIMATION FLOOR, a blogsystem for animated GIFs by Bernd Plontsch</title>
+	</head>
+	<body>
+		<p>:: about the system</p>
+
+		<p><strong>:: ANIMATION FLOOR 0.1</strong> - gallery php script </p>
+		
+		<p>WHAT IS ANIMATION FLOOR?<br />
+		it's kind of a photo-blog system for animated gifs. one page, showing a bunch of GIFs in a chronological order with title-overlays. that's it.</p>
+		
+		<p>WHERE DO I GET IT?<br />
+		just write an email an ask for the script and i will send it to you. i thought about releasing it unter GPL and setup a SVN or something but i didn't deal with it yet. so if you have any use for this just tell me: bernd@plontsch.de</p>
+		
+		<p>HOW DO YOU MAKE THESE ANIMATIONS?<br />
+		all photos are taken by my iphone and the amazing <a href="http://artandmobile.com/quadcamera/">quadcamera</a> app. some photos are converted to simple animated GIFs with the <a href="http://labs.artandmobile.com/quadanimator/">quadanimator</a>, great stuff! but of course you can use any other GIF as well. right now i am using my QUAD2GIF (look down for a description and download) batch script to convert a lot of quadcamera images the quick way.</p>
+		
+		<p>HOW DOES IT WORK?<br />
+		in order to post a photo, you just upload it to your webspace (where the ANIMATION FLOOR script lives) and .... well, that's it. there is no backend, database or cms. just PHP and IMAGEMAGICK. the only thing to remember is to name your files according to the scheme: "090813_nicetitle.gif" ... this will put an image with the timemark "13.08.09" and the title "nicetitle" online. if you don't want any title use the keyword "blank", e.g. "090813_blank.gif". there is even a converterscript for new photos, so you don't have to neccessarily use the quadanimator.</p>
+		
+		<p>WHY DON'T YOU JUST USE SYSTEM XY? IT'S WAY COOLER!<br />
+		either because i didn't know that it exists or because i thought that it is too bloated for my purpose. when i was looking for a slick and easy photo-blogging or gallery script treating my gif-animated lomo photos right, i couldn't find any! ... so i had to do it by myself :). but tell me about it!</p>
+		
+<p>FEATURES<br />
+* handles (only) animated gif<br />
+* no cms, just upload images to publish<br />
+* metadata (date + title) parsed from image filenames<br />
+* converter for lomostyle quadimages to animated gifs<br />
+</p>
+
+<p>TO COME<br />
+* clean up messy code, GPL release<br />
+* batch conversion<br />
+* maaaybe porting this to cakephp<br />
+</p>
+
+<p><strong>:: QUAD2GIF 0.1</strong> - unix batch script for bulk conversions of quadcamera images to animated gifs</p>
+		
+		<p>WHAT IS c?<br />
+		it's a simple unix batch script to convert folders full of quadcamera images into animated gifs with the  press of one button. to run it you need <a href="http://www.imagemagick.org/script/binary-releases.php">imagemagick</a> installed on your system, it will do the imageprocessing part. on mac os x you can get it with the <a href="http://darwinports.com/">darwin ports</a> (it's a repository of unix ports for mac os x. great stuff.). if you feel ready just download the script <a href="http://blog.plontsch.de/download/quad2gif.sh.zip">here</a>, put it into the folder with you quadcamera images and run it by typing "./quad2gif" in the terminal. have fun!</p>
+
+<p>CONTACT: bernd@plontsch.de</p>
+
+		<p><a href="http://blog.plontsch.de/">back to the blog</a></p>
+	</body>
+</html>

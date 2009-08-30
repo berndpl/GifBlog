@@ -1,0 +1,11 @@
+
+body {font-family:trebuchet MS; font-size:10px;}
+a {color: black;}
+.sysmessage {font-size: 10px; color:grey;}
+
+.image {float:left; margin-right:4px; padding:0px; position:relative;}
+.image .date {color:#FFFFFF; background:#000000;  position:absolute; top:20px; left:0px; padding:3px;}
+.image .title {color:#FFFFFF; background:#000000;  position:absolute; bottom:20px; left:0px; padding:3px;}
+.clear {float:none;}
+
+
