@@ -34,7 +34,7 @@ $x = new images($path.'pub/');
 		
 		?>
 
-		::welcome to my blog. subscribe to <a href="http://blog.plontsch.de/feed.php">rss</a>. about the <a href="about.html">system</a>. <a href="http://plontsch.de/">projects</a> | <a href="http://twitter.com/ohrobot">twtr</a> | bernd@plontsch.de
+		:: welcome to my blog. subscribe to <a href="http://blog.plontsch.de/feed.php">rss</a> :: <a href="about.html"> about</a> :: <a href="http://plontsch.de/">projects</a> :: <a href="http://twitter.com/ohrobot">twtr</a> :: contact bernd@plontsch.de
 		
 		<?php
 		//include google analytics footer if placed in the according folder

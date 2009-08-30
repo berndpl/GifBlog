@@ -24,6 +24,11 @@ CREDITS
 
 * FeedCreator class v1.7.2, Kai Blankenhorn, http://www.bitfolge.de
 * Imagemagick, http://www.imagemagick.org/
+
+
+IF YOU WANT TO USE IT
+
+Get the code at github (http://github.com/ohrobot/animationfloor/), fork it, use it. Have fun. Just remember to leave a link to http://projects.plontsch.de somewhere in the footer.
                
 
 WHAT IS ANIMATION FLOOR?
