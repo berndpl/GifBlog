@@ -22,7 +22,7 @@ TO COME
 
 CREDITS
 
-* FeedCreator class v1.7.2, Kai Blankenhorn, www.bitfolge.de
+* FeedCreator class v1.7.2, Kai Blankenhorn, http://www.bitfolge.de
 * Imagemagick, http://www.imagemagick.org/
                
 
