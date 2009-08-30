@@ -1,5 +1,8 @@
 :: ANIMATION FLOOR 0.1 - simple animated gif gallery
               
+DEMO
+
+http://blog.plontsch.de
 
 FEATURES
 
