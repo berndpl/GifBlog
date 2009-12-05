@@ -15,15 +15,42 @@ $x = new images($path.'pub/');
 		<link rel="alternate" type="application/rss+xml" title="ANIMATION FLOOR - RSS Feed" href="http://blog.plontsch.de/feed.php" />
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<title>ANIMATION FLOOR, a blog by Bernd Plontsch</title>
-		<script src="jquery.js" type="text/javascript"></script>
+		<script type="text/javascript" src="jquery.js"></script>
+		
+		<script type="text/javascript">
+$('document').ready(function() 
+{ 
+    $('#mylist a').click(function ()
+    {
+        var id = $(this).attr('rel');
+
+        $.getJSON('jindex_getinfo.php', {'id' : id}, parseInfo);
+    });
+});
+
+function parseInfo(data)
+{
+    $('#info').html(data.name +', '+ data.email);
+} 
+		</script>
+
 	</head>
 	<body>
-	
-	
-		<?php
 
+<ul id="mylist">
+    <li><a rel="3" href="/#dave">Dave's email address</a></li>
+    <li><a rel="4" href="/#erik">Erik's email address</a></li>
+</ul>
+
+<p id="info">&nbsp;</p> 
+
+		<?php
+/*
 		$allimages = $x->show('hoch',true);
+		echo json_encode($allimages);
 		$mem;
+*/
+/*
 		foreach ($allimages as $image){
 			echo '<div class="image"><img src="'.$image["imagepath"].'" alt="'.$image["name"].'" />';
 			if ($image['dateshow']!=$mem){
@@ -35,6 +62,8 @@ $x = new images($path.'pub/');
 			echo '</div>';
 			$mem = $image['dateshow'];
 		}
+*/
+
 
 		
 		?>

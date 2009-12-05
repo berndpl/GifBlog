@@ -9,3 +9,13 @@ a {color: black;}
 .clear {float:none;}
 
 
+
+DIV#loader {
+  border: 1px solid #ccc;
+  width: 150px;
+  height: 201px;
+}
+
+DIV#loader.loading {
+  background: url(spinner.gif) no-repeat center center;
+}
