@@ -15,13 +15,54 @@ $x = new images($path.'pub/');
 		<link rel="alternate" type="application/rss+xml" title="ANIMATION FLOOR - RSS Feed" href="http://blog.plontsch.de/feed.php" />
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<title>ANIMATION FLOOR, a blog by Bernd Plontsch</title>
+		<script src="js/jquery.js" type="text/javascript"></script>
+		<script src="js/jquery.preload-min.js" type="text/javascript" charset="utf-8"></script>				
+		<script type="text/javascript">   
+		console.log('start');
+				jQuery(function( $ ){
+				$('#summary').fadeIn('slow');
+
+				/**
+				* All the functions below, are used to update the summary div
+				 * That is not the objective of the plugin, the really important part
+				 * is the one right below. The option placeholder, and threshold.
+				 */
+				 $.preload( '.entry img', {//the first argument is a selector to the images
+				 onRequest:request,
+				 onComplete:complete,
+				 onFinish:finish,
+				 placeholder:'js/loader.gif',//this is the really important option
+				 notFound:'js/missing.gif',//optional image if an image wasn't found
+				 threshold: 1 //'2' is the default, how many at a time, to load.
+				 }); 
+
+				 function update( data ){
+				 $('#done').html( ''+data.done );
+				 $('#total').html( ''+data.total );
+				 $('#loaded').html( ''+data.loaded );
+				 $('#failed').html( ''+data.failed );
+				 };
+				 function complete( data ){
+				 update( data );
+				 $('#image-next').html( 'none' );//reset the "loading: xxxx"
+				 $('#image-loaded').html( data.image );
+				 };
+				 function request( data ){
+				 update( data );
+				 $('#image-next').html( data.image );//set the "loading: xxxx"
+				 };
+				 function finish(){//hide the summary
+				 $('#summary').fadeOut('slow');
+				 };
+				});
+		</script>
 	</head>
 	<body>
 		<?php
 		$allimages = $x->show('hoch',true);
 		$mem;
 		foreach ($allimages as $image){
-			echo '<div class="image"><img src="'.$image["imagepath"].'" alt="'.$image["name"].'" />';
+			echo '<div class="entry"><img src="'.$image["imagepath"].'" alt="'.$image["name"].'" />';
 			if ($image['dateshow']!=$mem){
 				echo '<div class="date">'.$image['dateshow'].'</div>';
 			}
