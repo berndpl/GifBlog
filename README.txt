@@ -58,4 +58,6 @@ WHAT IS IT?
 
 it's a simple unix batch script to convert folders full of quadcamera images into animated gifs with one command. to run it you need imagemagick installed on your system, it will do the imageprocessing part. on mac os x you can get it with the darwin ports (it's a repository of unix ports for mac os x. great stuff.). put it into the folder with you quadcamera images locally or on your server and run it by typing "./quad2gif". have fun!
 
-CONTACT: bernd@plontsch.de
+CONTACT: bernd@plontsch.de      
+
+.
