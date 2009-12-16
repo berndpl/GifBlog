@@ -33,7 +33,7 @@ $x = new images($path.'pub/');
 				 onFinish:finish,
 				 placeholder:'js/loader.gif',//this is the really important option
 				 notFound:'js/missing.gif',//optional image if an image wasn't found
-				 threshold: 1 //'2' is the default, how many at a time, to load.
+				 threshold: 6 //'2' is the default, how many at a time, to load.
 				 }); 
 
 				 function update( data ){
