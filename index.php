@@ -8,17 +8,16 @@ include "draw.php";
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<link rel="icon" href="favicon.ico" type="image/ico">
 		<link rel="alternate" type="application/rss+xml" title="ANIMATION FLOOR - RSS Feed" href="http://blog.plontsch.de/feed.php" />
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<title>ANIMATION FLOOR, a blog by Bernd Plontsch</title>
-		<script src="js/jquery-1.2.6.min.js" type="text/javascript"></script>
+		<script src="js/jquery-1.2.6.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/jquery.preload-min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/jquery.quickpaginate.packed.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/jquery.jplayer.js" type="text/javascript"></script> 		
-		
-		<script type="text/javascript">   
+		<script src="js/jquery.jplayer.js" type="text/javascript" charset="utf-8"></script> 		
+		<script type="text/javascript" charset="utf-8">   
 		console.log('start');
 
 		// PAGINATOR
@@ -64,14 +63,14 @@ include "draw.php";
 		  });
 		});
 		
-		var playing = 0;
+		var $playing = 0;
 		function playthis($file){
-			if (playing == 0){
+			if ($playing == 0){
 				$("#jpId").setFile($file).play();
-				playing = 1;				
+				$playing = 1;				
 			} else {
   			   $("#jpId").stop();
-				playing = 0;  
+				$playing = 0;  
 			} 
 		}
 			      
@@ -80,7 +79,7 @@ include "draw.php";
 	<body>            
 		<div id="jpId"></div>
 		<div>
-			<?php draw(1,$to,$path); ?>              
+<?php draw(1,$to,$path); ?>              
 		</div>
 		<div style="clear:both;"></div>
 		<div>

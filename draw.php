@@ -14,22 +14,23 @@ function draw($from=1,$to,$path){
 	$mem;
 	for ($i = 0; $i < count($entries->content); $i++){
 		if (get_class($entries->content[$i])=='ImageEntry'){
-		 	echo '<div class="entry"><img src="'.$entries->content[$i]->imagepath.'" alt="'.$entries->content[$i]->title.'" />';
+		 	echo "\n".'<div class="entry">'."\n";
+			echo '	<img src="'.$entries->content[$i]->imagepath.'" alt="'.$entries->content[$i]->title.'" />'."\n";
 		 	if ($entries->content[$i]->date!=$mem){
-		 		echo '<div class="date">'.$entries->content[$i]->date.'</div>';
+		 		echo '	<div class="date">'.$entries->content[$i]->date.'</div>'."\n";
 		 	}
 		 	if (strpos($entries->content[$i]->title,'blank') === false){
-		 	echo '<div class="title">'.$entries->content[$i]->title.'</div>'; 		
+		 	echo '	<div class="title">'.$entries->content[$i]->title.'</div>'."\n";
 		 	}
 		    if (get_class($entries->content[$i-1])=='SoundEntry'){
 			$filenamestart=split("/",$entries->content[$i-1]->soundpath);
 			$filenameuse = $filenamestart[1]; 
             $filename=explode(".",$filenameuse);
-			echo '<div class="sound">';
+			echo '	<div class="sound">';
 			echo '<a href="#" class="soundcontrol-play" id="'.$filename[0].'" onclick=\'playthis("'.$entries->content[$i-1]->soundpath.'");\'>play sound</a>';
-			echo '</div>';
+			echo '</div>'."\n";
 			}
-		 	echo '</div>';
+		 	echo '</div>'."\n";
 		 	$mem = $entries->content[$i]->date;             
 		}
 	}
