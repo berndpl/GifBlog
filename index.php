@@ -24,7 +24,7 @@ include "draw.php";
 		// PAGINATOR
 
 		$(function(){
-			$(".entry").quickpaginate({ perpage: 12, showcounter: false, pager : $("#pager") });
+			$(".entry").quickpaginate({ perpage: <?php echo $itemsperpage; ?>, showcounter: false, pager : $("#pager") });
 			$(".qp_next").attr('innerHTML', 'newer'); 
 			$(".qp_prev").attr('innerHTML', 'older');		
 		});
