@@ -38,7 +38,7 @@ include "draw.php";
 				onFinish:finish,
 				placeholder:'js/loader.gif',//this is the really important option
 				notFound:'js/missing.gif',//optional image if an image wasn't found
-				threshold: 2 //'2' is the default, how many at a time, to load.
+				threshold: 5 //'2' is the default, how many at a time, to load.
 			});
 			function update( data ){
 			 	$('#done').html( ''+data.done );
