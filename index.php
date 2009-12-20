@@ -1,10 +1,8 @@
 <?php 
-include "config.inc.php";
-include "lib.inc.php";
+include_once "config.inc.php";
+include_once "lib.inc.php";
 
-$b = new bench; 
-$b->start(); 
-$x = new images($path.'pub/');
+include "draw.php";
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
@@ -15,81 +13,80 @@ $x = new images($path.'pub/');
 		<link rel="alternate" type="application/rss+xml" title="ANIMATION FLOOR - RSS Feed" href="http://blog.plontsch.de/feed.php" />
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<title>ANIMATION FLOOR, a blog by Bernd Plontsch</title>
-		<script src="js/jquery.js" type="text/javascript"></script>
-		<script src="js/jquery.preload-min.js" type="text/javascript" charset="utf-8"></script>				
+		<script src="js/jquery-1.2.6.min.js" type="text/javascript"></script>
+		<script src="js/jquery.preload-min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.quickpaginate.packed.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.jplayer.js" type="text/javascript"></script> 		
+		
 		<script type="text/javascript">   
 		console.log('start');
-				jQuery(function( $ ){
-				$('#summary').fadeIn('slow');
 
-				/**
-				* All the functions below, are used to update the summary div
-				 * That is not the objective of the plugin, the really important part
-				 * is the one right below. The option placeholder, and threshold.
-				 */
-				 $.preload( '.entry img', {//the first argument is a selector to the images
-				 onRequest:request,
-				 onComplete:complete,
-				 onFinish:finish,
-				 placeholder:'js/loader.gif',//this is the really important option
-				 notFound:'js/missing.gif',//optional image if an image wasn't found
-				 threshold: 6 //'2' is the default, how many at a time, to load.
-				 }); 
+		// PAGINATOR
 
-				 function update( data ){
-				 $('#done').html( ''+data.done );
-				 $('#total').html( ''+data.total );
-				 $('#loaded').html( ''+data.loaded );
-				 $('#failed').html( ''+data.failed );
-				 };
-				 function complete( data ){
-				 update( data );
-				 $('#image-next').html( 'none' );//reset the "loading: xxxx"
-				 $('#image-loaded').html( data.image );
-				 };
-				 function request( data ){
-				 update( data );
-				 $('#image-next').html( data.image );//set the "loading: xxxx"
-				 };
-				 function finish(){//hide the summary
-				 $('#summary').fadeOut('slow');
-				 };
-				});
+		$(function(){
+			$(".entry").quickpaginate({ perpage: 12, showcounter: false, pager : $("#pager") });
+			$(".qp_next").attr('innerHTML', 'newer'); 
+			$(".qp_prev").attr('innerHTML', 'older');		
+		});
+
+		// PRELOADER 
+
+		jQuery(function( $ ){
+			$.preload( '.entry img', {//the first argument is a selector to the images
+				onRequest:request,
+				onComplete:complete,
+				onFinish:finish,
+				placeholder:'js/loader.gif',//this is the really important option
+				notFound:'js/missing.gif',//optional image if an image wasn't found
+				threshold: 2 //'2' is the default, how many at a time, to load.
+			});
+			function update( data ){
+			 	$('#done').html( ''+data.done );
+			 	$('#total').html( ''+data.total );
+			 };
+			function complete( data ){
+			 	update( data );
+			};
+			function request( data ){
+			 	update( data );
+			};
+			function finish(){//hide the summary
+			 	$('#summary').fadeOut('slow');
+			};
+		});   
+
+		// SOUND PLAYER
+		
+		$(document).ready(function() {
+		  $("#jpId").jPlayer( {
+		    ready: function () {
+		    },
+		  });
+		});
+		
+		var playing = 0;
+		function playthis($file){
+			if (playing == 0){
+				$("#jpId").setFile($file).play();
+				playing = 1;				
+			} else {
+  			   $("#jpId").stop();
+				playing = 0;  
+			} 
+		}
+			      
 		</script>
 	</head>
-	<body>
-		<?php
-		$allimages = $x->show('hoch',true);
-		$mem;
-		foreach ($allimages as $image){
-			echo '<div class="entry"><img src="'.$image["imagepath"].'" alt="'.$image["name"].'" />';
-			if ($image['dateshow']!=$mem){
-				echo '<div class="date">'.$image['dateshow'].'</div>';
-			}
-			if (strpos($image['name'],'blank') === false){
-			echo '<div class="title">'.$image['name'].'</div>';
-			}
-			echo '</div>';
-			$mem = $image['dateshow'];
-		}
-		
-		?>
-
-		:: welcome to my blog. subscribe to <a href="http://blog.plontsch.de/feed.php">rss</a> :: <a href="about.html"> about</a> :: <a href="http://plontsch.de/">projects</a> :: <a href="http://twitter.com/ohrobot">twtr</a> :: contact bernd@plontsch.de
-		
-		<?php
-		//include google analytics footer if placed in the according folder
-		$analytics = $path.'.private/googleanalytics-code.inc'; 
-        if (file_exists($analytics)) { 
-            include '.private/googleanalytics-code.inc'; 
-        } else { 
-            echo "$analytics does not exist"; 
-        } 
-		?>
-
+	<body>            
+		<div id="jpId"></div>
+		<div>
+			<?php draw(1,$to,$path); ?>              
+		</div>
+		<div style="clear:both;"></div>
+		<div>
+			<p><div id="pager"></div></p>  	
+			<p><div id="summary">loading ... <span id="done"></span> of <span id="total"></span></div></p>
+			<p><div class="paragraph"> this is my blog. welcome.</div></p>
+		</div>
 	</body>
-<?php
-$b->stop(); 
-echo "<div class=\"sysmessage\">[".$b->diff()."]</div>";
-?>
 </html>
