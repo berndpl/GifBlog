@@ -49,9 +49,9 @@ class ListEntry{
  			$pieces = explode(".",$file);
  			$ext = $pieces[1];
  			$name = substr($pieces[0], 7,36);
- 			$size = getimagesize($this->path.$file);
+// 			$size = getimagesize($this->path.$file);
  			//get date
- 		    $creationdate = date ("d.m.y", filectime($this->path.$file));
+// 		    $creationdate = date ("d.m.y", filectime($this->path.$file));
  			$year = substr($file, 0,2);
  			$month = substr($file, 2,2);
  			$day = substr($file, 4,2);

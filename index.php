@@ -86,7 +86,8 @@ include "draw.php";
 		<div>
 			<p><div id="pager"></div></p>  	
 			<p><div id="summary">loading ... <span id="done"></span> of <span id="total"></span></div></p>
-			<p><div class="paragraph"> this is my blog. welcome.</div></p>
+			<p><div class="paragraph"> this is my blog. welcome. :: contact bernd@plontsch.de </div></p>			
+			
 		</div>
 	</body>
 </html>
