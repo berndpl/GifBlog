@@ -2,17 +2,12 @@
 include_once "config.inc.php";
 include_once "data.inc.php";
 
-
-
 if (isset($_GET['page'])){
 	$start = ($_GET['page']-1)*$itemsperpage;
-	$entries = new ListEntry ($start,$itemsperpage-1,$path); 
-	//$entries = new ListEntry (4,25,$path); 
+	$entries = new ListEntry ($start,$itemsperpage-1,$path);  
 } else {
-	$entries = new ListEntry (0,9999,$path); 
-//	echo "ho".$itemsperpage;
+	$entries = new ListEntry (0,$itemsperpage-1,$path); 
 }	
-//print_r($entries->content);	
 
 $mem;
 for ($i = 0; $i < count($entries->content); $i++){
@@ -35,8 +30,6 @@ for ($i = 0; $i < count($entries->content); $i++){
 	 	echo '</div>'."\n";
 	 	$mem = $entries->content[$i]->date;             
 }  
-    
-
-
+                            
 ?>                                   
 
