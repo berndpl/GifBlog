@@ -79,7 +79,7 @@ include_once "data.inc.php";
 			<ul id="pagination">
 			<?php    
 			 //Pagination
-			 $x = new ListEntry(1,25,$path);   //start, items, path
+			 $x = new ListEntry(1,9999,$path);   //start, items, path
 			  // echo "<p>OUTSIDE</p><pre>";
 			  // print_r($x->content);
 			  // echo "</pre>";   
