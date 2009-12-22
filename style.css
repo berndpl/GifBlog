@@ -9,8 +9,8 @@ a {color: black;}
 .entry .title {color:#FFFFFF; background:#000000;  position:absolute; bottom:20px; left:0px; padding:3px;}
 .clear {float:none;}
 
-.qp_prev, .qp_next {color:#FFFFFF; background:#000000; padding:3px; margin-right:5px; margin-top:5px;}
-.qp_disabled {display: none;}
+.paginator {color:#FFFFFF; background:#000000; padding:3px; margin-top:5px;} 
+ul#pagination {padding-left:0px; margin-left:0px;}
 
 DIV#loader {
   border: 1px solid #ccc;

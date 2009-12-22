@@ -27,7 +27,7 @@ function draw($from=1,$to,$path){
 			$filenameuse = $filenamestart[1]; 
             $filename=explode(".",$filenameuse);
 			echo '	<div class="sound">';
-			echo '<a href="#" class="soundcontrol-play" id="'.$filename[0].'" onclick=\'playthis("'.$entries->content[$i-1]->soundpath.'");\'>play sound</a>';
+			echo '<a href="'.$entries->content[$i-1]->soundpath.'" class="soundcontrol-play" id="'.$filename[0].'" onclick=\'playthis("'.$entries->content[$i-1]->soundpath.'");\'>play sound</a>';
 			echo '</div>'."\n";
 			}
 		 	echo '</div>'."\n";

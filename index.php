@@ -1,7 +1,8 @@
 <?php 
 include_once "config.inc.php";
 include_once "lib.inc.php";
-
+include_once "paginator.class.php";
+                                      
 include "draw.php";
 ?>
 
@@ -15,18 +16,9 @@ include "draw.php";
 		<title>ANIMATION FLOOR, a blog by Bernd Plontsch</title>
 		<script src="js/jquery-1.2.6.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/jquery.preload-min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/jquery.quickpaginate.packed.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/jquery.jplayer.js" type="text/javascript" charset="utf-8"></script> 		
+		<script src="js/jquery.jplayer.js" type="text/javascript"></script> 		
 		<script type="text/javascript" charset="utf-8">   
 		console.log('start');
-
-		// PAGINATOR
-
-		$(function(){
-			$(".entry").quickpaginate({ perpage: <?php echo $itemsperpage; ?>, showcounter: false, pager : $("#pager") });
-			$(".qp_next").attr('innerHTML', 'newer'); 
-			$(".qp_prev").attr('innerHTML', 'older');		
-		});
 
 		// PRELOADER 
 
@@ -59,7 +51,8 @@ include "draw.php";
 		$(document).ready(function() {
 		  $("#jpId").jPlayer( {
 		    ready: function () {
-		    },
+		    $(".soundcontrol-play").attr({href:"#"});
+			},
 		  });
 		});
 		
@@ -73,17 +66,31 @@ include "draw.php";
 				$playing = 0;  
 			} 
 		}
-			      
+		
+	      
 		</script>
 	</head>
 	<body>            
 		<div id="jpId"></div>
 		<div>
-<?php draw(1,$to,$path); ?>              
-		</div>
+			<?php include 'data.php'; ?>              
+		</div>                         
+	
 		<div style="clear:both;"></div>
 		<div>
-			<p><div id="pager"></div></p>  	
+			<ul id="pagination">
+			<?php    
+			//Pagination Numbers
+			$x = new ListEntry(1,9999,$path);
+			$result = $x->content;
+			$count = count($result);
+			$pages = ceil($count/$itemsperpage);
+
+			for($i=1; $i<=$pages; $i++) {
+				echo '<a class="paginator" id="'.$i.'" href="?page='.$i.'">'.$i.'</a> ';
+			}              
+			?>   
+			</ul>  	
 			<p><div id="summary">loading ... <span id="done"></span> of <span id="total"></span></div></p>
 			<p><div class="paragraph"> this is my blog. welcome. :: contact bernd@plontsch.de </div></p>			
 			
