@@ -1,9 +1,7 @@
 <?php 
 include_once "config.inc.php";
-include_once "lib.inc.php";
-include_once "paginator.class.php";
-                                      
-include "draw.php";
+include_once "data.inc.php";
+//include "draw.php";
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
@@ -23,6 +21,7 @@ include "draw.php";
 		// PRELOADER 
 
 		jQuery(function( $ ){
+			$('#summary').fadeIn('slow');
 			$.preload( '.entry img', {//the first argument is a selector to the images
 				onRequest:request,
 				onComplete:complete,
@@ -51,6 +50,7 @@ include "draw.php";
 		$(document).ready(function() {
 		  $("#jpId").jPlayer( {
 		    ready: function () {
+			//$("#jpId").setFile('pub/091208_templewater.mp3').play(); 
 		    $(".soundcontrol-play").attr({href:"#"});
 			},
 		  });
@@ -66,34 +66,36 @@ include "draw.php";
 				$playing = 0;  
 			} 
 		}
-		
-	      
+ 
 		</script>
 	</head>
 	<body>            
 		<div id="jpId"></div>
 		<div>
-			<?php include 'data.php'; ?>              
+			<?php include 'draw.inc.php'; ?>              
 		</div>                         
-	
 		<div style="clear:both;"></div>
 		<div>
 			<ul id="pagination">
 			<?php    
-			//Pagination Numbers
-			$x = new ListEntry(1,9999,$path);
-			$result = $x->content;
-			$count = count($result);
-			$pages = ceil($count/$itemsperpage);
-
-			for($i=1; $i<=$pages; $i++) {
-				echo '<a class="paginator" id="'.$i.'" href="?page='.$i.'">'.$i.'</a> ';
-			}              
+			 //Pagination
+			 $x = new ListEntry(1,25,$path);   //start, items, path
+			  // echo "<p>OUTSIDE</p><pre>";
+			  // print_r($x->content);
+			  // echo "</pre>";   
+			
+			 $count = count($x->content);
+			 //echo "<p>all items: ".$count."</p>"; 
+			 $pages = ceil($count/$itemsperpage);
+			 //echo "<p>pages: ".$pages."</p>"; 
+			 
+			 for($i=1; $i<=$pages; $i++) {
+			 	echo '<a class="paginator" id="'.$i.'" href="?page='.$i.'">'.$i.'</a> ';
+			 }              
 			?>   
 			</ul>  	
-			<p><div id="summary">loading ... <span id="done"></span> of <span id="total"></span></div></p>
-			<p><div class="paragraph"> this is my blog. welcome. :: contact bernd@plontsch.de </div></p>			
-			
+			<p><div id="summary" style="display:none;">loading ... <span id="done"></span> of <span id="total"></span></div></p>
+			<p><div class="paragraph"> this is my blog. welcome. :: contact bernd@plontsch.de </div></p>	 		
 		</div>
 	</body>
 </html>
