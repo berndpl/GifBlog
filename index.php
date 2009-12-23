@@ -73,10 +73,10 @@ include_once "data.inc.php";
 		<div id="jpId"></div>
 		<div>
 			<?php include 'draw.inc.php'; ?>              
-		</div>                         
+		</div>                            
 		<div style="clear:both;"></div>
 		<div>
-			<ul id="pagination">
+			<ul id="pagination">        
 			<?php    
 			 //Pagination
 			 $x = new ListEntry(1,9999,$path);   //start, items, path
@@ -90,7 +90,11 @@ include_once "data.inc.php";
 			 //echo "<p>pages: ".$pages."</p>"; 
 			 
 			 for($i=1; $i<=$pages; $i++) {
-			 	echo '<a class="paginator" id="'.$i.'" href="?page='.$i.'">'.$i.'</a> ';
+				$style = '';
+				if ($i == $_GET['page'] || ((!isset($_GET['page']) && ($i == 1)))) {
+					$style = 'id ="current"';
+				} 
+			 	echo '<a class="paginator" '.$style.'" href="?page='.$i.'">'.$i.'</a> ';
 			 }              
 			?>   
 			</ul>  	
