@@ -10,6 +10,7 @@ a {color: black;}
 .clear {float:none;}
 
 .paginator {color:#FFFFFF; background:#000000; padding:3px; margin-top:5px;} 
+#current {color:#000000; background:#FFFFFF;} 
 ul#pagination {padding-left:0px; margin-left:0px;}
 
 DIV#loader {
