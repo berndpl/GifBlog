@@ -140,8 +140,8 @@ include_once "inc.data.php";
 		</div>
 		<?php
 		//include google analytics footer if placed in "googleanalytics-code.inc.php"
-        if (file_exists('googleanalytics-code.inc.php')) { 
-            include 'googleanalytics-code.inc.php'; 
+        if (file_exists('inc.googleanalytics-code.php')) { 
+            include 'inc.googleanalytics-code.php'; 
         }
 		?>		
 	</body>
