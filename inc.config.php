@@ -1,6 +1,5 @@
 <?php
 
-//VIEW
 $path_file = pathinfo($_SERVER["SCRIPT_FILENAME"]);
 $mediafolder = '/pub';
 $path = $path_file ['dirname'].$mediafolder;

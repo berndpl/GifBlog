@@ -1,7 +1,7 @@
 <?php
-include "config.inc.php";
-include "lib.inc.php";
-include "lib.feedwriter.php";
+include "inc.config.php";
+include "inc.data.php";
+include "inc.feedwriter-lib.php";
 $x = new images($path.'pub/');
 
 //header

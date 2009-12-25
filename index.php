@@ -1,6 +1,6 @@
 <?php 
-include_once "config.inc.php";
-include_once "data.inc.php";
+include_once "inc.config.php";
+include_once "inc.data.php";
 //include "draw.php";
 ?>
 
@@ -100,8 +100,6 @@ include_once "data.inc.php";
 			 	return false;
 			});  
 		});  
-
- 
  
 		</script>
 	</head>
@@ -113,7 +111,7 @@ include_once "data.inc.php";
 	</div>
 	</div>
 		<div>
-			<?php include 'draw.inc.php'; ?>              
+			<?php include 'inc.draw.php'; ?>              
 		</div>                            
 		<div style="clear:both;"></div>
 		<div>

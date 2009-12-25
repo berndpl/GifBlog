@@ -1,6 +1,6 @@
 <?php    
-include_once "config.inc.php";
-include_once "data.inc.php";
+include_once "inc.config.php";
+include_once "inc.data.php";
 
 if (isset($_GET['page'])){
 	$start = ($_GET['page']-1)*$itemsperpage;
