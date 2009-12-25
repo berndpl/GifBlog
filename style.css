@@ -1,12 +1,13 @@
-
+img {border:0px;}
 body {font-family:trebuchet MS; font-size:10px;}
 a {color: black;}
 .sysmessage {font-size: 10px; color:grey;}
 
 .entry {float:left; margin-right:4px; padding:0px; position:relative;}
 .entry .date {color:#FFFFFF; background:#000000;  position:absolute; top:20px; left:0px; padding:3px;}
-.entry .sound a {color:#FFFFFF; background:#000000;  position:absolute; bottom:42px; left:0px; padding:3px;}
+/*.entry .sound a {color:#FFFFFF; background:#000000;  position:absolute; bottom:42px; left:0px; padding:3px;}*/
 .entry .title {color:#FFFFFF; background:#000000;  position:absolute; bottom:20px; left:0px; padding:3px;}
+.entry .sound a {color:#FFFFFF; background:#000000; bottom:20px; left:0px; padding:3px;}        
 .clear {float:none;}
 
 .paginator {color:#FFFFFF; background:#000000; padding:3px; margin-top:5px;} 
