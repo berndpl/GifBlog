@@ -140,5 +140,11 @@ include_once "data.inc.php";
 			<div id="summary" style="display:none;">loading ... <span id="done"></span> of <span id="total"></span></div>
 			<div class="paragraph"> this is my blog. welcome. :: contact bernd@plontsch.de </div>
 		</div>
+		<?php
+		//include google analytics footer if placed in "googleanalytics-code.inc.php"
+        if (file_exists('googleanalytics-code.inc.php')) { 
+            include 'googleanalytics-code.inc.php'; 
+        }
+		?>		
 	</body>
 </html>
