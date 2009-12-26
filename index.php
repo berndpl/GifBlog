@@ -135,7 +135,7 @@ include_once "inc.data.php";
 			?>   
 			</ul>  	
 			<div id="summary" style="display:none;">loading ... <span id="done"></span> of <span id="total"></span></div>
-			<div class="paragraph"> this is my blog. welcome! :: bernd plontsch :: <a href="mailto:bernd@plontsch.de" onclick="pageTracker._trackEvent('index', 'external link', 'mail');">mail</a> :: <a href="http://wiki.github.com/ohrobot/animationfloor" onclick="pageTracker._trackEvent('index', 'external link', 'script');">script</a> :: <a href="http://plontsch.de" onclick="pageTracker._trackEvent('index', 'external link', 'projects');">projects</a></div>
+			<div><h1>this is my blog. welcome! click on posts marked with a "<img src="js/headphone_black.gif" alt="headphone"/>" to listen to additional field recordings :: <strong>bernd plontsch</strong> :: <a href="mailto:bernd@plontsch.de" onclick="pageTracker._trackEvent('index', 'external link', 'mail');">mail</a> :: <a href="http://wiki.github.com/ohrobot/animationfloor" onclick="pageTracker._trackEvent('index', 'external link', 'script');">script</a> :: <a href="http://plontsch.de" onclick="pageTracker._trackEvent('index', 'external link', 'projects');">projects</a><h1></div>
 		</div>
 		
 		<?php

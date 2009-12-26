@@ -1,5 +1,7 @@
 img {border:0px;}
 body {font-family:trebuchet MS; font-size:10px;}
+h1 {font-family:trebuchet MS; font-size:10px;font-weight:normal;}
+
 a {color: black;}
 .sysmessage {font-size: 10px; color:grey;}
 
@@ -13,13 +15,3 @@ a {color: black;}
 .paginator {color:#FFFFFF; background:#000000; padding:3px; margin-top:5px;} 
 #current {color:#000000; background:#FFFFFF;} 
 ul#pagination {padding-left:0px; margin-left:0px;}
-
-DIV#loader {
-  border: 1px solid #ccc;
-  width: 150px;
-  height: 201px;
-}
-
-DIV#loader.loading {
-  background: url(spinner.gif) no-repeat center center;
-}
