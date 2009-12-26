@@ -1,63 +1,28 @@
-:: ANIMATION FLOOR 0.1 - simple animated gif gallery
-              
-DEMO
+Home
+:: ANIMATION FLOOR 0.3 (091226)
+to implement my blog (blog.plontsch.de) i created a simple animated gif gallery system. Get the code, fork it, extend it, use it. Have fun. Just remember to credit me.
 
-http://blog.plontsch.de
-
-FEATURES
-
-* created for showing animated gifs only
-* rename + upload is every thing needed to publish
-* date + title is directly parsed from image filenames
+SYSTEM FEATURES
+* content limited to images and audio
+* easy publishing by renaming + uploading image or audio 
+* date + title are directly parsed from image filenames
+* an audiofile of similar filename is attached to a existing image post
 * quad2gif.sh skript to batch create animated gifs
-* basic RSS feed
-                   
+* RSS feed
+* pagination
 
-TO COME
+FUTURE WISHLIST
+* “I like this” function
+* possibilty to link single images
+* preloader image
 
-* automation for the uploading process
-* improve RSS feed
-* soup.io style pagination
-                                          
+HOW TO?
+* To take the photos I use the and the amazing quadcamera iphone app.
+* to bulk convert quadcamera jpgs to to animated gifs I use the QUAD2GIF bash skript (placing “quad2gif.sh” into a folder with unprocessed images and running it in the terminal).
+* to post a photo, you just upload it to the pub/ directory and rename the new files according to the scheme: “090813_nicetitle.gif” – this will put an image with the timemark “13.08.09” and the title “nicetitle”.
 
-IF YOU WANT TO USE IT
+ADDITIONAL CREDITS
+* jQuery + Plug-Ins: JPlayer
+* Imagemagick
 
-Get the code at github (http://github.com/ohrobot/animationfloor/), fork it, use it. Have fun. Just remember to leave a link to http://projects.plontsch.de somewhere in the footer.
-               
-
-WHAT IS ANIMATION FLOOR?
-
-it's meant to be a simple photo-blog system for animated gifs. one page, showing a bunch of GIFs in a chronological order with title-overlays. that's it.
-
-
-HOW DO YOU MAKE THESE ANIMATIONS?
-
-all photos are taken with an iphone and the amazing quadcamera app. to bulk convert quadcamera jpgs to to animated gifs I use my QUAD2GIF skript (/quad2gif.sh). however, for single conversions you could also use quadanimator. (http://labs.artandmobile.com/quadanimator/)
-
-
-HOW DOES IT WORK?
-
-in order to post a photo, you just upload it to the pub/ directory and .... well, that's it. there is no backend, database or cms. just PHP and IMAGEMAGICK. the only thing to remember is to name your files according to the scheme: "090813_nicetitle.gif" - this will put an image with the timemark "13.08.09" and the title "nicetitle" on your ANIMATION FLOOR. if you don't want any title use the keyword "blank", e.g. "090813_blank.gif". there is even a converterscript for new photos, so you don't have to neccessarily use the quadanimator.
-
-
-WHY DON'T YOU JUST USE SYSTEM XY? IT'S WAY COOLER!
-
-either because i didn't know that it exists or because i thought that it is too bloated for this purpose. but hey if you know cool alternatives, please tell me about them!
-
-
-USED
-
-* for creating the rss feed - FeedCreator class v1.7.2, Kai Blankenhorn, http://www.bitfolge.de
-* to do the image conversion in quad2gi.sh - Imagemagick, http://www.imagemagick.org/
-
-                                                      
-:: QUAD2GIF 0.1 - unix batch script for bulk conversions of quadcamera images to animated gifs    
-
-
-WHAT IS IT?                
-
-it's a simple unix batch script to convert folders full of quadcamera images into animated gifs with one command. to run it you need imagemagick installed on your system, it will do the imageprocessing part. on mac os x you can get it with the darwin ports (it's a repository of unix ports for mac os x. great stuff.). put it into the folder with you quadcamera images locally or on your server and run it by typing "./quad2gif". have fun!
-
-CONTACT: bernd@plontsch.de      
-
-.
+CONTACT: bernd@plontsch.de

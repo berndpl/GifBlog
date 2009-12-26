@@ -17,8 +17,6 @@ include_once "inc.data.php";
 		<script src="js/jquery.jplayer.js" type="text/javascript" charset="utf-8"></script> 		
 		<script type="text/javascript" charset="utf-8"> 
 		  
-		console.log('start');
-
 		// PRELOADER 
 
 		// jQuery(function( $ ){
@@ -47,14 +45,21 @@ include_once "inc.data.php";
 		// 	};
 		// 
 		// });   
-		
-		//--------
-		// PLAYER                             
-		//--------
+
 				
 		$(document).ready(function(){	 
 	 
-	    $(".entry a").attr("href", "#"); //reset links for javascript
+		//NON-JAVASCRIPT COMPATABILITY
+
+	    $(".entry a").attr("href", "#");
+
+		//GOOGLE ANALYTICS LINK TRACKING
+		
+		$("a").click(function(){
+            pageTracker._trackPageview('/links/'+ $(this).attr('href'));
+		});
+		
+		//JPLAYER
 	
 		$("#jquery_jplayer").jPlayer({
 				ready: function () {
@@ -64,7 +69,6 @@ include_once "inc.data.php";
 		 });
 	
 		function playthis($soundfile) {
-	//		$(".entry .sound a").text($soundfile);
 		 $("#jquery_jplayer").setFile($soundfile).play();
 		 return false;
 		}   
@@ -78,7 +82,7 @@ include_once "inc.data.php";
 		return pathe;
 		} 
 
-		var playing = '';          //init playing
+		var playing = ''; //init playing
 
 		$(".soundcontrol").click(function() {
 			 console.log(this.id);	
@@ -117,13 +121,8 @@ include_once "inc.data.php";
 		<div>
 			<ul id="pagination">        
 			<?php    
-
 			 //Pagination
-
 			 $x = new ListEntry(1,9999,$path);   //start, items, path
-			  // echo "<p>OUTSIDE</p><pre>";
-			  // print_r($x->content);
-			  // echo "</pre>";   
 			 $count = count($x->content);
 			 $pages = ceil($count/$itemsperpage);
 			 for($i=1; $i<=$pages; $i++) {
@@ -136,10 +135,11 @@ include_once "inc.data.php";
 			?>   
 			</ul>  	
 			<div id="summary" style="display:none;">loading ... <span id="done"></span> of <span id="total"></span></div>
-			<div class="paragraph"> this is my blog. welcome. :: contact bernd@plontsch.de </div>
+			<div class="paragraph"> this is my blog. welcome! :: bernd plontsch :: <a href="mailto:bernd@plontsch.de" onclick="pageTracker._trackEvent('index', 'external link', 'mail');">mail</a> :: <a href="http://wiki.github.com/ohrobot/animationfloor" onclick="pageTracker._trackEvent('index', 'external link', 'script');">script</a> :: <a href="http://plontsch.de" onclick="pageTracker._trackEvent('index', 'external link', 'projects');">projects</a></div>
 		</div>
+		
 		<?php
-		//include google analytics footer if placed in "googleanalytics-code.inc.php"
+		//include google analytics code
         if (file_exists('inc.googleanalytics-code.php')) { 
             include 'inc.googleanalytics-code.php'; 
         }
