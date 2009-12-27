@@ -5,7 +5,11 @@ h1 {font-family:trebuchet MS; font-size:10px;font-weight:normal;}
 a {color: black;}
 .sysmessage {font-size: 10px; color:grey;}
 
-.entry {float:left; margin-right:4px; padding:0px; position:relative;}
+.entry {float:left; margin-right:1px; padding:0px; position:relative;
+	background-image: url(js/loader.gif);
+	background-color:#e9e6e6;
+	width:150px;height:200px;
+	margin-top:1px;}
 .entry .date {color:#FFFFFF; background:#000000;  position:absolute; top:20px; left:0px; padding:3px;}
 /*.entry .sound a {color:#FFFFFF; background:#000000;  position:absolute; bottom:42px; left:0px; padding:3px;}*/
 .entry .title {color:#FFFFFF; background:#000000;  position:absolute; bottom:20px; left:0px; padding:3px;}
