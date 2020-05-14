@@ -1,3 +1,5 @@
+http://diary.plontsch.de
+
 Home
 :: ANIMATION FLOOR 0.3 (091226)
 to implement my blog (blog.plontsch.de) i created a simple animated gif gallery system. Get the code, fork it, extend it, use it. Have fun. Just remember to credit me.
@@ -12,14 +14,14 @@ SYSTEM FEATURES
 * pagination
 
 FUTURE WISHLIST
-* “I like this” function
+* √íI like this√ì function
 * possibilty to link single images
 * preloader image
 
 HOW TO?
 * To take the photos I use the and the amazing quadcamera iphone app.
-* to bulk convert quadcamera jpgs to to animated gifs I use the QUAD2GIF bash skript (placing “quad2gif.sh” into a folder with unprocessed images and running it in the terminal).
-* to post a photo, you just upload it to the pub/ directory and rename the new files according to the scheme: “090813_nicetitle.gif” – this will put an image with the timemark “13.08.09” and the title “nicetitle”.
+* to bulk convert quadcamera jpgs to to animated gifs I use the QUAD2GIF bash skript (placing √íquad2gif.sh√ì into a folder with unprocessed images and running it in the terminal).
+* to post a photo, you just upload it to the pub/ directory and rename the new files according to the scheme: √í090813_nicetitle.gif√ì √ê this will put an image with the timemark √í13.08.09√ì and the title √ínicetitle√ì.
 
 ADDITIONAL CREDITS
 * jQuery + Plug-Ins: JPlayer
